@@ -1,4 +1,4 @@
-package arrays_n_hashing;
+package two_pointers;
 
 public class ValidPalindrome {
     public static boolean isPalindrome(String s) {
