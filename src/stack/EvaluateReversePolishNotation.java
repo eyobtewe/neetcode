@@ -13,7 +13,6 @@ public class EvaluateReversePolishNotation {
 
         Stack<Integer> stack = new Stack<>();
 
-
         for ( String token : tokens ) {
 
             switch ( token ) {
