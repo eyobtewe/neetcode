@@ -1,59 +1,33 @@
 package linked_list;
 
-import java.util.Stack;
+import linked_list.node.ListNode;
 
 public class ReverseLinkedList {
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(0, new ListNode(1, new ListNode(2, new ListNode(3))));
+
+        ListNode head = new ListNode(
+                0, new ListNode(1, new ListNode(2, new ListNode(3)))
+        );
         System.out.println(head);
         System.out.println(reverseList(head));
     }
 
     public static ListNode reverseList(ListNode head) {
-
-        Stack<ListNode> stack = new Stack<>();
-
         if ( head == null || head.next == null ) {
             return head;
         }
 
+        ListNode prev = null, next;
 
         while ( head.next != null ) {
-            stack.push(head);
-            head = head.next;
+            next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
         }
-        head = stack.pop();
-        while ( !stack.isEmpty() ) {
-            head.next = stack.pop();
-        }
+        head.next = prev;
 
         return head;
-    }
-}
-
-class ListNode {
-
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-
-
-    @Override
-    public String toString() {
-        return "{" + val +
-                "," + next +
-                '}';
     }
 }
