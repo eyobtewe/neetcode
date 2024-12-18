@@ -96,6 +96,7 @@ public class MergeTwoSortedLinkedLists {
     }
 
     public static ListNode createAListNode(int[] a) {
+        if ( a.length==0 ) return new ListNode();
         ListNode head = new ListNode(a[0]);
         ListNode cur = head;
         for ( int i = 1; i < a.length; i++ ) {
