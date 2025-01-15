@@ -1,6 +1,7 @@
 package tree.tree_node;
 
 import tree.MaximumDepthOfBinaryTree;
+import tree.SameBinaryTree;
 
 // * Definition for a binary tree node.
 public class TreeNode {
@@ -27,9 +28,21 @@ public class TreeNode {
       root.left.right = new TreeNode(3);
       root.right.left = new TreeNode(6);
       root.right.right = new TreeNode(9);
+      // Tree 2
+      TreeNode root2 = new TreeNode(4);
+      root2.left = new TreeNode(2);
+      root2.right = new TreeNode(7);
+      root2.left.left = new TreeNode(1);
+      root2.left.right = new TreeNode(3);
+      root2.right.left = new TreeNode(6);
+      root2.right.right = new TreeNode(9);
 
-      System.out.println("Original Tree (Inorder Traversal):");
-      displayTree(root);
+      // System.out.println(" Tree 1 ");
+      // displayTree(root);
+      // System.out.println(" Tree 2 ");
+      // displayTree(root2);
+
+      System.out.printf("Is same tree? %b",SameBinaryTree.isSameTree(root, root2));
 
       // Invert the tree
 //      InvertBinaryTree.invertTree(root);
@@ -37,8 +50,8 @@ public class TreeNode {
 //      System.out.println("\nInverted Tree (Inorder Traversal):");
 //      displayTree(root);
 
-      System.out.printf("\nMaximum depth is (%d):",
-            MaximumDepthOfBinaryTree.maxDepth(root));
+      // System.out.printf("\nMaximum depth is (%d):",
+      //       MaximumDepthOfBinaryTree.maxDepth(root));
 
    }
 
