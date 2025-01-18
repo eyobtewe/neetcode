@@ -3,42 +3,46 @@ package tree;
 import tree.tree_node.TreeNode;
 
 public class SubtreeOfAnotherTree {
-    public static boolean isSubtree = false;
 
-    public static boolean isSubtree(TreeNode root, TreeNode subRoot) {
+   public static boolean isSubtree(TreeNode root, TreeNode subRoot) {
+      if (subRoot == null) {
+         return true;
+      } else if (root == null) {
+         return false;
+      } else if (isSameTree(root, subRoot)) {
+         return true;
+      }
 
-        if (isSubtree) {
-            return true;
-        } else {
-            isSubtree = isSameTree(root, subRoot);
-        }
-        if (isSubtree)
-            return isSubtree;
+      return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+   }
 
-        boolean left = isSameTree(root.left, subRoot);
-        if (left)
-            return true;
+   public static boolean isSameTree(TreeNode p, TreeNode q) {
+      if (p == null || q == null) {
+         return p == q;
+      }
 
-        boolean right = isSameTree(root.right, subRoot);
-
-        return left || right;
-    }
-
-    public static boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null && q == null) {
-            return true;
-        } else if ((p == null && q != null) || (p != null && q == null)) {
-            return false;
-        } else if (p.val != q.val) {
-            return false;
-        }
-
-        boolean left = isSameTree(p.left, q.left);
-        if (!left) {
-            return false;
-        }
-        boolean right = isSameTree(p.right, q.right);
-
-        return left && right;
-    }
+      return p.val == q.val
+            && isSameTree(p.left, q.left)
+            && isSameTree(p.right, q.right);
+   }
 }
+
+/*
+ * public boolean isSubtree(TreeNode s, TreeNode t) {
+ * if (t == null) return true; // Null tree is always a subtree
+ * if (s == null) return false; // Main tree is empty, cannot have any subtrees
+ * if (areIdentical(s, t)) return true; // Check if trees are identical
+ * // Check left and right subtrees of S
+ * return isSubtree(s.left, t) || isSubtree(s.right, t);
+ * }
+ * 
+ * // Helper function to check if two trees are identical
+ * private boolean areIdentical(TreeNode s, TreeNode t) {
+ * if (s == null && t == null) return true; // Both are null
+ * if (s == null || t == null) return false; // One is null, the other is not
+ * // Compare the current node and recursively check left and right children
+ * return (s.val == t.val) &&
+ * areIdentical(s.left, t.left) &&
+ * areIdentical(s.right, t.right);
+ * }
+ */
