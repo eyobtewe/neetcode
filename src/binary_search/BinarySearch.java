@@ -1,33 +1,34 @@
 package binary_search;
 
-import java.util.Arrays;
-
-import tree.tree_node.TreeNode;
-
 public class BinarySearch {
-    private static int index = 0;
-
     public static void main(String[] args) {
         int[] numbers = { -1, 0, 2, 4, 6, 8 };
         System.out.println(
-                "\nreturned" + search((numbers), 4));
+                "\nreturned=> " + search((numbers), 13));
     }
 
     public static int search(int[] nums, int target) {
-        int mid = nums.length / 2;
-        if (nums[mid] > target) {
-            index += mid;
-            return search(Arrays.copyOfRange(nums, 0, mid), target);
-        } else if (nums[mid] < target) {
-            index -= mid;
-            return search(Arrays.copyOfRange(nums, mid + 1, nums.length), target);
-        } else {
-
-            System.out.printf("index ->%d,\t value->%d", mid, nums[mid]);
-            return mid;
-
-        }
-
+        return binarySearch(nums, target, 0, nums.length);
     }
 
+    private static int binarySearch(int[] nums, int target, int left, int right) {
+        try {
+
+            if (left > right) {
+                return -1;
+            }
+
+            int middle = left + (right - left) / 2;
+
+            if (nums[middle] == target) {
+                return middle;
+            }
+
+            return nums[middle] > target
+                    ? binarySearch(nums, target, left, middle - 1)
+                    : binarySearch(nums, target, middle + 1, right);
+        } catch (Exception e) {
+            return -1;
+        }
+    }
 }
