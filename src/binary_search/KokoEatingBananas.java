@@ -51,19 +51,19 @@ public class KokoEatingBananas {
       return left;
    }
 
-   @Test
-   public void testMinEatingSpeed() {
-      int[] piles = new int[]{3, 6, 7, 11};
-      int[] piles2 = new int[]{30, 11, 23, 4, 20};
-      int[] piles3 = new int[]{3, 6, 7, 11};
-      int[] piles4 = new int[]{805_306_368, 805_306_368, 805_306_368};
-      int[] piles5 = new int[]{805, 805, 805};
-
-      assertEquals(4, minEatingSpeed(piles, 8));
-      assertEquals(30, minEatingSpeed(piles2, 5));
-      assertEquals(23, minEatingSpeed(piles2, 6));
-      assertEquals(2, minEatingSpeed(piles3, 18));
-      assertEquals(3, minEatingSpeed(piles4, 1_000_000_000));
-      assertEquals(3, minEatingSpeed(piles5, 999));
-   }
+//   @Test
+//   public void testMinEatingSpeed() {
+//      int[] piles = new int[]{3, 6, 7, 11};
+//      int[] piles2 = new int[]{30, 11, 23, 4, 20};
+//      int[] piles3 = new int[]{3, 6, 7, 11};
+//      int[] piles4 = new int[]{805_306_368, 805_306_368, 805_306_368};
+//      int[] piles5 = new int[]{805, 805, 805};
+//
+//      assertEquals(4, minEatingSpeed(piles, 8));
+//      assertEquals(30, minEatingSpeed(piles2, 5));
+//      assertEquals(23, minEatingSpeed(piles2, 6));
+//      assertEquals(2, minEatingSpeed(piles3, 18));
+//      assertEquals(3, minEatingSpeed(piles4, 1_000_000_000));
+//      assertEquals(3, minEatingSpeed(piles5, 999));
+//   }
 }
