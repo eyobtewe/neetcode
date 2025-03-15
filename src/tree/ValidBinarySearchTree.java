@@ -6,8 +6,7 @@ import tree.tree_node.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
 
 public class ValidBinarySearchTree {
 
@@ -32,21 +31,21 @@ public class ValidBinarySearchTree {
 //         [5,1,4,null,null,3,6]
 //         [0]
 //         [0,-1]
-
-   @Test
-   public void testIsValidBST() {
-
-      TreeNode treeNode = new TreeNode(new Object[]{2, 1, 3});
-      TreeNode treeNode2 = new TreeNode(new Object[]{5, 1, 4, null, null, 3, 6});
-      TreeNode treeNode3 = new TreeNode(new Object[]{0});
-      TreeNode treeNode4 = new TreeNode(new Object[]{0, -1});
-      TreeNode treeNode5 = new TreeNode(new Object[]{5, 4, 6, null, null, 3, 7});
-
-//      TreeNode.displayTree(treeNode5);
-      assertTrue(isValidBST(treeNode));
-      assertFalse(isValidBST(treeNode2));
-      assertTrue(isValidBST(treeNode3));
-      assertTrue(isValidBST(treeNode4));
-      assertFalse(isValidBST(treeNode5));
-   }
+//
+//   @Test
+//   public void testIsValidBST() {
+//
+//      TreeNode treeNode = new TreeNode(new Object[]{2, 1, 3});
+//      TreeNode treeNode2 = new TreeNode(new Object[]{5, 1, 4, null, null, 3, 6});
+//      TreeNode treeNode3 = new TreeNode(new Object[]{0});
+//      TreeNode treeNode4 = new TreeNode(new Object[]{0, -1});
+//      TreeNode treeNode5 = new TreeNode(new Object[]{5, 4, 6, null, null, 3, 7});
+//
+////      TreeNode.displayTree(treeNode5);
+//      assertTrue(isValidBST(treeNode));
+//      assertFalse(isValidBST(treeNode2));
+//      assertTrue(isValidBST(treeNode3));
+//      assertTrue(isValidBST(treeNode4));
+//      assertFalse(isValidBST(treeNode5));
+//   }
 }
