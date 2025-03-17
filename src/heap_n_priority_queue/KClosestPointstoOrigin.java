@@ -30,11 +30,11 @@ public class KClosestPointstoOrigin {
 
    }
 
-   public static void main(String[] args) {
-      System.out.println(Arrays.deepToString(
-            kClosest(new int[][]{{0, 2}, {2, 0}, {2, 2}}, 2)));
-
-      System.out.println(Arrays.deepToString(
-            kClosest(new int[][]{{2, 2}, {2, 2}, {2, 2}, {2, 2}, {2, 2}, {2, 2}, {1, 1}}, 2)));
-   }
+//   public static void main(String[] args) {
+//      System.out.println(Arrays.deepToString(
+//            kClosest(new int[][]{{0, 2}, {2, 0}, {2, 2}}, 2)));
+//
+//      System.out.println(Arrays.deepToString(
+//            kClosest(new int[][]{{2, 2}, {2, 2}, {2, 2}, {2, 2}, {2, 2}, {2, 2}, {1, 1}}, 2)));
+//   }
 }

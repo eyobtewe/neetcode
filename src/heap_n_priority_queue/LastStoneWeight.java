@@ -26,7 +26,7 @@ public class LastStoneWeight {
 
    }
 
-   public static void main(String[] args) {
-      System.out.println(lastStoneWeight(new int[]{2, 3, 6, 2, 4}));
-   }
+//   public static void main(String[] args) {
+//      System.out.println(lastStoneWeight(new int[]{2, 3, 6, 2, 4}));
+//   }
 }
