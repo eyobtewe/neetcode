@@ -5,30 +5,27 @@ import java.util.List;
 
 public class Subsets {
    public static List<List<Integer>> subsets(int[] nums) {
-      List<List<Integer>> sets = new ArrayList<>((int) Math.pow(2, nums.length));
+      List<List<Integer>> totalAnswer = new ArrayList<>();
 
-//      for ( int i = 0; i <= nums.length; i++ ) {
+      backtrack(totalAnswer, new ArrayList<>(), nums, 0);
 
-      setGenerator(sets, nums, 0);
-
-      return sets;
+      return totalAnswer;
    }
 
-   public static void setGenerator(List<List<Integer>> sets, int[] numbers, int i) {
-      List<Integer> set = new ArrayList<>();
+   public static void backtrack(List<List<Integer>> totalAnswer, List<Integer> temp, int[] nums, int start) {
 
-      if ( i >= numbers.length ) {
-         sets.add(set);
-         return;
+      totalAnswer.add(new ArrayList<>(temp));
+
+      for ( int i = start; i < nums.length; i++ ) {
+
+         temp.add(nums[i]);
+
+         backtrack(totalAnswer, temp, nums, i + 1);
+
+         temp.remove(temp.size() - 1);
+
       }
 
-      set.add(numbers[i]);
-      setGenerator(sets, numbers, i + 1);
-
-      set.removeLast();
-      setGenerator(sets, numbers, i + 1);
-
-//      sets.add(set);
    }
 
    public static void main(String[] args) {
